@@ -1,19 +1,12 @@
+
 .data
-arr: .word 3, 4, 5, 6
+w: .word 7
+
 .text
-main:
-    la a0, arr
-    li a1, 4
-    jal ra, sum
-    li a7, 10
-    ecall
-sum:
-    li t0, 0
-loop:
-    lw t1, 0(a0)
-    add t0, t0, t1
-    addi a0, a0, 4
-    addi a1, a1, -1
-    bnez a1, loop
-    mv a0, t0
-    ret
+lui a0, 0x10000
+addi t3, zero, 1
+addi t4, zero, 1
+addi t5, zero, 1
+lw t0, 0(a0)
+add t1, t0, t0
+sub t2, t1, t0
